@@ -1,0 +1,15 @@
+.signCard {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+
+    width: 100%;
+    min-width: 10rem;
+    height: 110%;
+    min-height: 100vh;
+
+    padding-bottom: 5rem;
+    background-color: #0005;
+}

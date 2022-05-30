@@ -1,0 +1,12 @@
+
+.error {
+    margin-top: 0.2rem;
+    color: #f33;
+    border-bottom: 2px solid red;
+  }
+
+
+.errorSpan {
+    margin-top: 0.2rem;
+    color: #f33;
+  }
