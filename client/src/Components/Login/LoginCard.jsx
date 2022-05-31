@@ -57,7 +57,7 @@ export default function LoginCard() {
   return (
     <div className={style.container}>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <h1>- LOGIN ADMIN- </h1>
+        <h1>- LOGIN ADMIN - </h1>
         <label>
           <h3>Email</h3>
           <div
@@ -126,7 +126,7 @@ export default function LoginCard() {
         {path === "/admin/login" ? (
           <div className={style.buttonContainer}>
             <div>OR</div>
-            <button type="submit" onClick={() => navigate("/signup")}>
+            <button type="submit" onClick={() => navigate("/admin/signup")}>
               SignUp
             </button>
           </div>

@@ -11,20 +11,25 @@ import Home from "./Pages/Home/Home";
 
 import Navbar from "./Components/Navbar/NavBar";
 
-
 import PrivateRoute from "./Components/TypeRoutes/PrivateRoute";
+import ChartBar from "./Pages/Admin/ChartBar/ChartBar";
+import ChartPie from "./Pages/Admin/ChartPie/ChartPie";
+
 
 function App() {
   return (
     <div>
-      <Navbar />
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
+        <Route path="admin">
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
+        </Route>
         <Route element={<PrivateRoute />}>
-          <Route path="admin">
-            <Route path="login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="home" element={<HomeAdmin />} />
+          <Route path="admin" element={<Navbar />}>
+            <Route path="chartbar" element={<ChartBar />} />
+            <Route path="chartpie" element={<ChartPie />} />
+
           </Route>
         </Route>
         <Route path="home" element={<Home />} />

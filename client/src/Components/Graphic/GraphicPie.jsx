@@ -11,7 +11,11 @@ export default function GraphicPie({data:{yes, no}}) {
     labels: ["YES", "NO"],
     datasets: [
       {
-        label: "# of Votes",
+        label: "Votes",
+        title: {
+          display: true,
+          text: 'CHALLENGE',
+        },
         data: [yes,no],
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",
@@ -30,8 +34,8 @@ export default function GraphicPie({data:{yes, no}}) {
   };
 
   return (
-    <div style={{ width: "50rem", height: "20rem" }}>
-      <h2>Poll</h2>
+    <div style={{ width: "30rem", height: "20rem" }}>
+     
       <Pie data={setup} />
     </div>
   );

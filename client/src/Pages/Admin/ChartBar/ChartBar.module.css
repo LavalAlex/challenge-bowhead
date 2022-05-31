@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+    /* background-color: rgb(236, 243, 247); */
+}
+
+.chartbar{
+    display: flex;
+   
+
+    min-width: 10rem;
+    height: 100%;
+    min-height: 100vh;
+    /* margin: 0 auto 2rem auto; */
+    
+    /* background-color:darkgray; */
+}

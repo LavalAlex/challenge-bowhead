@@ -15,51 +15,37 @@ export default function NavbarAdmin() {
   const navigate = useNavigate();
   const session = useSelector((state) => state.auth.success);
   const [showMenu, setShowMenu] = useState(false);
+  const path = useLocation().pathname;
 
   const logoutNav = () => {
     dispatch(logout());
-    navigate("/login");
+    navigate("/");
   };
 
-  console.log(session);
+  console.log(path);
 
   return (
     <header className={`${styles.navbar}  `}>
       <nav className={styles.nav}>
         <div className={styles.left}>
-          <Link className={styles.brand} to="/">
-            <span>SUGSA</span>
+          <Link className={styles.brand}  to={path==="/admin/chartbar"? "/admin/chartbar":"/admin/chartpie"}>
+            <span>Bowhead Health</span>
             <img src={logo} className={styles.logo} alt="" />
           </Link>
         </div>
         <ul className={styles.menu}>
-          {session ? "" : ""}
+          <Menu barchart piechart  />
         </ul>
-        <Menu column dashboard user />
+  
+        {/* {path === "/admin/chartpie"?
+        <ul className={styles.menu}>
+          <Menu barchart piechart  />
+        </ul>:
+         <ul className={styles.menu}>
+       </ul>
+        }  */}
 
         <div className={styles.right}>
-          {session ? (
-            <div className={styles.profile__container}>
-              <div
-                className={
-                  `${showMenu ? styles.show : styles.hide} ` +
-                  styles.profile__menu
-                }
-              >
-                <Menu column dashboard user />
-              </div>
-            </div>
-          ) : (
-            <NavLink to="/login">
-              <button
-                title="Log In"
-                className={`${styles.nav__link} ${styles.sigup}`}
-                onClick={() => logoutNav()}
-              >
-                <FiLogIn />
-              </button>
-            </NavLink>
-          )}
           {session ? (
             <div className={styles.right}>
               <button

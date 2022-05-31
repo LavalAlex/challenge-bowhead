@@ -99,6 +99,15 @@ form label {
   margin: 2em 0 0 0;
 }
 
+.buttonContainer div{
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #1e1e1e;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+}
+
 
 .buttonContainer button[type="submit"] {
   border-radius: 5em;
@@ -111,12 +120,14 @@ form label {
   padding: 1em;
   text-align: center;
   font-size: 1rem;
+  cursor: pointer;
   /* margin: 2em 0 0 0; */
 
 }
 
 .buttonContainer button[type="submit"]:hover {
   color: black;
+border: 1px solid #1e1e1e;
 
 }
 

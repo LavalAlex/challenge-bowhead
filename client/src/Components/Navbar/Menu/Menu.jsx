@@ -1,24 +1,40 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { BiHomeAlt } from "react-icons/bi";
-
+import { BiHomeAlt,  } from "react-icons/bi";
+import { IoBarChartOutline, IoPieChart } from "react-icons/io5";
 import styles from "./Menu.module.css";
 
-export default function Menu({ column, dashboard }) {
+export default function Menu({ column, barchart ,piechart }) {
   const path = useLocation().pathname;
 
   return (
-    <ul className={`${styles.menu} ${column ? styles.column : ""}`}>
-      {!dashboard ? (
+    <ul className={`${styles.menu} `}>
+      {barchart ? (
         <li>
           <NavLink
-            title="Dashboard"
+            title="Chart Bar"
             className={`${styles.menu__link} ${
-              path === "/dashboard" ? styles.active : ""
+              path === "/admin/chartbar" ? styles.active : ""
             }`}
-            to="/dashboard"
+            to="/admin/chartbar"
           >
-            <BiHomeAlt className={styles.icon} />
+            <IoBarChartOutline className={styles.icon} />
+          </NavLink>
+        </li>
+      ) : (
+        <></>
+      )}
+
+      {piechart ? (
+        <li>
+          <NavLink
+            title="Chart Pie"
+            className={`${styles.menu__link} ${
+              path === "/admin/chartpie" ? styles.active : ""
+            }`}
+            to="/admin/chartpie"
+          >
+            <IoPieChart className={styles.icon} />
           </NavLink>
         </li>
       ) : (

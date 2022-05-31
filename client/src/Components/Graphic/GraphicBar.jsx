@@ -13,6 +13,8 @@ import {
 
 export default function GraphicBar({data:{perfect, meh, bad}}){
 
+  console.log({perfect, meh, bad})
+
     ChartJS.register(
         CategoryScale,
         LinearScale,
@@ -30,7 +32,7 @@ export default function GraphicBar({data:{perfect, meh, bad}}){
           },
           title: {
             display: true,
-            text: 'Poll',
+            text: 'CHALLENGE',
           },
         },
       };
@@ -39,11 +41,12 @@ export default function GraphicBar({data:{perfect, meh, bad}}){
         labels: ["Perfect", "Meh", "Bad"],
         datasets:[{
             label: "Votes", 
-            backgroundColor:"rgba(0,255,0.1)",
+            backgroundColor: "rgba(54, 162, 235, 1)",
             borderColor:"black",
             borderWidth:1,
-            hoverBackgroundColor:"rgba(0,255,0,0.2)",
+            hoverBackgroundColor:"rgba(54, 162, 235, 0.2)",
             hoverBorderColor:"#FF000",
+            cursor:"pointer",
             data:[perfect?perfect:"",meh?meh:"",bad?bad:""]
         }]
     }
@@ -55,7 +58,6 @@ export default function GraphicBar({data:{perfect, meh, bad}}){
 
     return(
         <div style={{width:"50rem", height:"20rem"}}>
-            <h2>Poll</h2>
             <Bar data={setup} options={options}/>
         </div>
     )

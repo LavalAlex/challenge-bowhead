@@ -1,0 +1,13 @@
+.container{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img{
+    background-image: url('../../Img/img.png');
+    width:400px;
+    height:200px;
+    /* background: no-repeat; */
+}

@@ -10,7 +10,7 @@ export default function Login() {
   const navitage = useNavigate();
   
   return user.state === 200 ? (
-    navitage("/login")
+    navitage("/admin/login")
   ) : (
     
       <div className={styles.container}>

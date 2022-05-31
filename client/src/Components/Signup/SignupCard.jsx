@@ -9,12 +9,13 @@ import { validateLogin, validateSignup } from "../../Utils/validate";
 
 
 import style from "./SignupCard.module.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 export default function LoginCard() {
   const dispatch = useDispatch();
   const path = useLocation().pathname;
+  const navigate = useNavigate();
 
   const [keyOn, setKeyOn] = useState(false);
 
@@ -166,6 +167,16 @@ export default function LoginCard() {
         <div className={style.buttonContainer}>
           <button type="submit">SigUp</button>
         </div>
+        {path === "/admin/signup" ? (
+          <div className={style.buttonContainer}>
+            <div>OR</div>
+            <button type="submit" onClick={() => navigate("/admin/login")}>
+              Login
+            </button>
+          </div>
+        ) : (
+          ""
+        )}
       </form>
     </div>
   );

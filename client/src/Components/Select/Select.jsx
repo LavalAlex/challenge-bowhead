@@ -41,11 +41,11 @@ export default function SelectOption() {
           alert(error.data);
         } else {
           alert("Survey sent successfully");
-          navigate('/home')
+          navigate('/')
         }
       } else {
         alert("Survey was not sent!");
-        navigate('/home')
+        navigate('/')
       }
      
     }
@@ -80,7 +80,7 @@ export default function SelectOption() {
         )}
       </label>
 
-      <label>
+      <label className={style.wrapper}>
         <h2>Did you sleep well?</h2>
         <div>
           <input type="radio" name="sleep" value="yes" onChange={handleInput} />
@@ -97,8 +97,13 @@ export default function SelectOption() {
           ""
         )}
       </label>
-      <div>
-        <button onClick={handleSubmit}>Submit</button>
+      <div className={style.buttonContainer} >
+        <button type="submit" onClick={handleSubmit}  >Submit</button>
+
+        <div>OR</div>
+          <button type="submit" onClick={() => navigate("/admin/login")}>
+            ADMIN
+          </button>
       </div>
     </div>
   );

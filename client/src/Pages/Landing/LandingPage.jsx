@@ -1,11 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import LandingPageCard from "../../Components/LandigPage/LandiPageCard";
 import style from "./LandingPage.module.css";
 
 export default function LandingPage() {
+
+
   return (
-    <div>
-      YOU ARE? <Link to="/admin/login">Admin</Link> OR <Link to='/home'>User</Link>
-    </div>    
+    <div className={style.container}>
+    <diV className={style.landing}>
+
+      <LandingPageCard/>
+    </diV>
+    </div>
   );
 }

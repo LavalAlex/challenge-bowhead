@@ -10,7 +10,6 @@ import styles from "./HomeAdmin.module.css";
 
 export default function HomeAdmin() {
   const dispatch = useDispatch();
-  const navitage = useNavigate();
 
   const admin = useSelector((state) => state.auth);
   const data = useSelector((state) => state.poll.poll)
@@ -19,15 +18,9 @@ export default function HomeAdmin() {
     dispatch(allPoll(admin.token));
   },[]);
 
-  const handleLogout = () => {
-    dispatch(logout());
-    navitage("/admin/login");
-  };
-
-
   return (
     <div className={styles.container}>
-      <button onClick={handleLogout}>Logout</button>
+  
       <div className={styles.containerNewUser}>
       {data.mood?
         <GraphicBar data={data.mood}/>:""
