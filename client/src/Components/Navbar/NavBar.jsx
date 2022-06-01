@@ -36,15 +36,6 @@ export default function NavbarAdmin() {
         <ul className={styles.menu}>
           <Menu barchart piechart  />
         </ul>
-  
-        {/* {path === "/admin/chartpie"?
-        <ul className={styles.menu}>
-          <Menu barchart piechart  />
-        </ul>:
-         <ul className={styles.menu}>
-       </ul>
-        }  */}
-
         <div className={styles.right}>
           {session ? (
             <div className={styles.right}>

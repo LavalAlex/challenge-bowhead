@@ -7,7 +7,7 @@
 
 .img{
     background-image: url('../../Img/img.png');
-    width:400px;
-    height:200px;
-    /* background: no-repeat; */
+    width:200px;
+    height:150px;
+    background-position-x: -6.5rem;
 }

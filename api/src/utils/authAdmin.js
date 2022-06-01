@@ -7,7 +7,7 @@ const Admin = require("../schemas/Admin");
 const createAdmin = async (name, email, password) => {
   password = bcrypt.hashSync(password, saltRounds);
   const admin = await Admin.findOne({ email });
-  if (admin) return { error: "Error, this admin does exits" };
+  if (admin) return { error: "Error, this admin already exists!" };
   let newAdmin = new Admin({
     name,
     email,
@@ -16,8 +16,6 @@ const createAdmin = async (name, email, password) => {
   newAdmin.save();
   return { msg: "Create Successfully" };
 };
-
-
 
 const findAll = async () => {
   var adminAll = await Admin.find({});

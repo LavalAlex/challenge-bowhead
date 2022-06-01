@@ -1,17 +1,13 @@
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    /* background-color: rgb(236, 243, 247); */
+    align-items: center;
 }
 
 .chartpie{
     display: flex;
-   
-
-    min-width: 10rem;
+    min-width: 8rem;
     height: 100%;
     min-height: 100vh;
-    /* margin: 0 auto 2rem auto; */
-    
-    /* background-color:darkgray; */
 }

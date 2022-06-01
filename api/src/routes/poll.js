@@ -1,12 +1,9 @@
 const { Router } = require("express");
-const Mood = require("../schemas/Mood");
 const Sleep = require("../schemas/Sleep");
 const router = Router();
 
 const jwt = require("jsonwebtoken");
-
 const { JWT_SECRET } = process.env;
-
 
 const {verifyToken} = require('../utils/verifyToken');
 const { createPoll } = require("../utils/poll.utils");
@@ -17,26 +14,13 @@ router.post("/create", async (req, res) => {
     if (!sleep || !mood) {
       res.status(401).send("Error:{'Must provide in a Sleep and Mood'}");
     }
-
     const newPoll = await createPoll(req.body)
-    // let newMood = await Mood.create({
-    //   response: mood,
-    // });
-
-    // let newSleep = await Sleep.create({
-    //   response: sleep,
-    // });
-
-    // newMood.save();
-    // newSleep.save();
-
     res.status(200).send({ msg: "Create Successfully" });
   } catch (e) {
     console.log("Error on create the poll", e);
     res.status(404).send("Error on create the poll");
   }
 });
-
 
 router.get('allSleep', verifyToken, async (req, res) => {
   try {

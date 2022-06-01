@@ -4,7 +4,7 @@ import { BiHomeAlt,  } from "react-icons/bi";
 import { IoBarChartOutline, IoPieChart } from "react-icons/io5";
 import styles from "./Menu.module.css";
 
-export default function Menu({ column, barchart ,piechart }) {
+export default function Menu({ barchart ,piechart }) {
   const path = useLocation().pathname;
 
   return (

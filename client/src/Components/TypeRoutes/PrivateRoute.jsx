@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import { logout } from "../../Redux/Actions/Auth";
 
 function PrivateRoute() {

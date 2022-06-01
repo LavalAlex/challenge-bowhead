@@ -7,8 +7,7 @@ import { validateLogin } from "../../Utils/validate";
 
 import style from "./LoginCard.module.css";
 
-import logo from "../../Img/logo.jpeg";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function LoginCard() {
   const dispatch = useDispatch();
@@ -50,7 +49,13 @@ export default function LoginCard() {
             password: "",
           }));
     } else {
-      await dispatch(login(input));
+      const code = await dispatch(login(input));
+      if (code.error) {
+        setErrors((old) => ({
+          ...old,
+          code: code.error,
+        }));
+      }
     }
   };
 

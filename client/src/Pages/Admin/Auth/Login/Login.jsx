@@ -9,8 +9,6 @@ import styles from "./Login.module.css";
 export default function Login() {
   const auth = useSelector((state) => state.auth);
   const navitage = useNavigate();
-  console.log(auth.user.email)
-
   if(auth.success){
 
     navitage("/admin/chartbar")

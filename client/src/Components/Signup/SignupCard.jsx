@@ -1,42 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { FaUserCircle, FaKey, FaEye } from "react-icons/fa";
 
-import { login, signup } from "../../Redux/Actions/Auth";
-import { validateLogin, validateSignup } from "../../Utils/validate";
-
+import { signup } from "../../Redux/Actions/Auth";
+import { validateSignup } from "../../Utils/validate";
 
 import style from "./SignupCard.module.css";
-import { useLocation, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 export default function LoginCard() {
   const dispatch = useDispatch();
-  const path = useLocation().pathname;
   const navigate = useNavigate();
 
   const [keyOn, setKeyOn] = useState(false);
-
 
   const [errors, setErrors] = useState({
     name: "",
     email: "",
     password: "",
-    business: "",
-    departament: "",
+    code: "",
   });
 
   const [input, setInput] = useState({
     name: "",
     email: "",
     password: "",
-    business: "",
-    departament: "",
   });
-
-  
 
   const handleChange = (e) => {
     setInput({
@@ -48,35 +38,32 @@ export default function LoginCard() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, email, password, business, departament } =
-      validateSignup(input);
-    if (email || password || business || departament || name) {
+    const { name, email, password } = validateSignup(input);
+    if (email || password || name) {
       setErrors((old) => ({
         ...old,
         name: name ? name : "",
         email: email ? email : "",
         password: password ? password : "",
-        business: business ? business : "",
-        departament: departament ? departament : "",
       }));
-      email
-        ? setInput({ email: "", password: "" })
-        : setInput((old) => ({
-            ...old,
-            password: "",
-          }));
     } else {
       const code = await dispatch(signup(input));
-      alert("User created successfully!");
+      if (code.error) {
+        setErrors((old) => ({
+          ...old,
+          code: code.error,
+        }));
+      } else {
+        alert("User created successfully!");
+        navigate("/admin/login");
+      }
     }
   };
-
- 
 
   return (
     <div className={style.container}>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <h1>{path === "/signup" ? "- SIGN UP -" : "- LOGIN ADMIN -"}</h1>
+        <h1>- SIGN UP -</h1>
         <label>
           <h5>Name</h5>
           <div
@@ -100,9 +87,7 @@ export default function LoginCard() {
             ""
           )}
         </div>
-      
-
-               <label>
+        <label>
           <h5>Email</h5>
           <div
             className={`${style.inputGroup} ${
@@ -167,16 +152,13 @@ export default function LoginCard() {
         <div className={style.buttonContainer}>
           <button type="submit">SigUp</button>
         </div>
-        {path === "/admin/signup" ? (
-          <div className={style.buttonContainer}>
-            <div>OR</div>
-            <button type="submit" onClick={() => navigate("/admin/login")}>
-              Login
-            </button>
-          </div>
-        ) : (
-          ""
-        )}
+
+        <div className={style.buttonContainer}>
+          <div>OR</div>
+          <button type="submit" onClick={() => navigate("/admin/login")}>
+            Login
+          </button>
+        </div>
       </form>
     </div>
   );

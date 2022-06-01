@@ -22,5 +22,5 @@ const server = require("./app.js");
 // Syncing all the models at once.
 
 server.listen(3001, () => {
-  console.log("listening at 3001"); // eslint-disable-line no-console
+  console.log("listening at 3001"); 
 });

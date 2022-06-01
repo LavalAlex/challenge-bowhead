@@ -11,6 +11,7 @@ const dicSleep = {
   yes: { yes: 1 },
   no: { no: 1 },
 };
+
 const createPoll = async ({ sleep, mood }) => {
   const findMood = await Mood.findOne({});
   if (!findMood) {

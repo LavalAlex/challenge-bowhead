@@ -1,12 +1,3 @@
-const validateNewPassword = ({ password }) => {
-  if (!password) return { error: "Error, You must provider a password" };
-  if (password.length < 6)
-    return {
-      error: "Error, The password must be at least 6 characters",
-    };
-  return {};
-};
-
 const validateLogin = ({ email, password }) => {
   if (!email) return { email: "Error, You must provider an email" };
   if (email) {
@@ -17,7 +8,6 @@ const validateLogin = ({ email, password }) => {
       return { email: "Error, Is not an email" };
     }
   }
-
   if (!password) return { password: "Error, You must provider a password" };
   if (password.length < 6)
     return {
@@ -26,16 +16,12 @@ const validateLogin = ({ email, password }) => {
   return {};
 };
 
-const validateSignup = ({ name, email, password, business, departament }) => {
+const validateSignup = ({ name, email, password }) => {
   if (!name) return { name: "Error, You must provider a name" };
   if (name.length < 3)
     return {
       password: "Error, The name must be at least 6 characters",
     };
-
-  if (!business) return { business: "Error, You must provider an business" };
-  if (!departament)
-    return { departament: "Error, You must provider an departament" };
   if (!email) return { email: "Error, You must provider an email" };
   if (email) {
     const validate = email.match(
@@ -44,8 +30,8 @@ const validateSignup = ({ name, email, password, business, departament }) => {
     if (!validate) {
       return { email: "Error, Is not an email" };
     }
+    return {};
   }
-
   if (!password) return { password: "Error, You must provider a password" };
   if (password.length < 6)
     return {
@@ -54,14 +40,14 @@ const validateSignup = ({ name, email, password, business, departament }) => {
 };
 
 const validateSubmit = ({ mood, sleep }) => {
-  console.log(mood)
-  console.log(sleep)
-  if (mood === "" || !mood) return { mood: "Error, You must provider a options" };
-  if (sleep === "" || !sleep) return { sleep: "Error, You must provider an options" };
+  if (mood === "" || !mood)
+    return { mood: "Error, You must provider a options" };
+  if (sleep === "" || !sleep)
+    return { sleep: "Error, You must provider an options" };
   return {};
 };
+
 module.exports = {
-  validateNewPassword,
   validateLogin,
   validateSignup,
   validateSubmit,

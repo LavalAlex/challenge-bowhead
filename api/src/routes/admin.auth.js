@@ -2,16 +2,16 @@ const { Router } = require("express");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET, JWT_EXPIRE_TIME } = process.env;
 
-const { createAdmin, findAll, findAdmin } = require("../utils/authAdmin");
+const { createAdmin, findAdmin } = require("../utils/authAdmin");
 
 const router = Router();
 
 router.post("/signup", async (req, res) => {
   try {
-    var { name, email, password, empresa } = req.body;
-    const newAdmin = await createAdmin(name, email, password, empresa);
+    var { name, email, password}= req.body;
+    const newAdmin = await createAdmin(name, email, password);
     if (newAdmin.error) res.status(404).send(newAdmin);
-    else res.status(200).send(newAdmin);
+    else res.status(200).send({msg:"User created successfully!"});
   } catch (e) {
     console.log("Error on signup:", e);
     res.status(404).send("Error on the user register");

@@ -8,11 +8,11 @@
 
 .container>form {
   padding: 2.5em 5em;
+  max-height: 500px;
+  margin-bottom: 1.5rem;
 }
 
-
 .container h1 {
-  /* align-self: center; */
   display: flex;
   justify-content: center;
   margin-top: 0;
@@ -24,11 +24,12 @@
 .container label {
   margin-top: 0;
   margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .container h5 {
   margin-bottom: .5rem;
-
   margin-top: 0;
 }
 
@@ -36,12 +37,15 @@
   display: flex;
   align-items: center;
   font-size: 0.9rem;
-  width: 95%;
+  width: 90%;
   border: 1px solid #ccc;
   background-color: #fff;
   padding: 0 0 0 1em;
   border-radius: 4px;
   overflow: hidden;
+  margin-left: 1rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .inputGroup:focus-within {
@@ -62,28 +66,29 @@
 }
 
 form label {
-  /* margin: 1em 0 0 0; */
   font-size: 0.9rem;
   width: 100%;
   background-color: #fff;
   font-family: "Roboto";
-  padding: 0.75em;
   border: none;
-  width: 100%;
+  width: 90%;
   font-size: 0.9rem;
   border: none;
   resize: none;
+  margin-right: 1rem;
+  margin-bottom: 0;
 }
 
 .inputGroup input {
   font-family: "Roboto";
   padding: 0.75em;
   border: none;
-  width: 95%;
+  width: 90%;
   font-size: 0.9rem;
   border: none;
   resize: none;
   outline: 0;
+  margin-bottom: 0;
 }
 
 .inputGroup :focus input {
@@ -104,8 +109,7 @@ form label {
   justify-content: center;
   border-bottom: 1px solid #1e1e1e;
   margin-bottom: 1rem;
-  margin-top: 1rem;
-
+  margin-top: 0rem;
 }
 
 
@@ -121,14 +125,12 @@ form label {
   text-align: center;
   font-size: 1rem;
   cursor: pointer;
-  /* margin: 2em 0 0 0; */
-
+  margin-bottom: 0rem;
+  margin-top: 0;
 }
 
 .buttonContainer button[type="submit"]:hover {
   color: black;
-border: 1px solid #1e1e1e;
-
 }
 
 .errorSpan {
@@ -163,12 +165,14 @@ border: 1px solid #1e1e1e;
   display: flex;
   align-items: center;
   font-size: 0.9rem;
-  width: 95%;
+  width: 90%;
   border: 1px solid #ccc;
   background-color: #fff;
   padding: 0 0 0 1em;
   border-radius: 4px;
   overflow: hidden;
+  margin-bottom: 0rem;
+  margin-left: 1rem;
 }
 
 .inputGroupPass .keyEye {
@@ -181,7 +185,6 @@ border: 1px solid #1e1e1e;
 
 .inputGroupPass:focus-within {
   outline: 2px solid hsl(226deg, 100%, 70%);
-  ;
 }
 
 .inputGroupPass:focus-within .keyEye {
@@ -191,7 +194,6 @@ border: 1px solid #1e1e1e;
 .inputGroupPass:focus-within .keyEye :hover {
   color: hsl(226deg, 100%, 70%);
 }
-
 
 .inputGroupPass:focus-within.error {
   margin-top: 0.2rem;
@@ -208,6 +210,7 @@ border: 1px solid #1e1e1e;
   border: none;
   resize: none;
   outline: 0;
+  margin-bottom: 0rem;
 }
 
 .inputGroupPass :focus input {

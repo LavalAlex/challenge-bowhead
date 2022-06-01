@@ -17,7 +17,6 @@ export default function SelectOption() {
       ...old,
       [name]: value,
     }));
-
     setErrors({
       mood: "",
       sleep: "",
@@ -47,9 +46,9 @@ export default function SelectOption() {
         alert("Survey was not sent!");
         navigate('/')
       }
-     
     }
   };
+
   return (
     <div>
       <label className={style.wrapper}>
@@ -63,7 +62,6 @@ export default function SelectOption() {
           />
           <label>Perfect, thank you!</label>
         </div>
-
         <div>
           <input type="radio" name="mood" value="meh" onChange={handleInput} />
           <label>Meh, I'm alive</label>
@@ -79,7 +77,6 @@ export default function SelectOption() {
           ""
         )}
       </label>
-
       <label className={style.wrapper}>
         <h2>Did you sleep well?</h2>
         <div>

@@ -13,9 +13,9 @@ export default function root(state = initialState, action) {
       };
 
     case CREATE_POLL:
-      return{
-      ...state
-    }
+      return {
+        ...state,
+      };
 
     default:
       return state;

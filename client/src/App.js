@@ -1,16 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
+//Auth admin
 import Login from "./Pages/Admin/Auth/Login/Login";
 import Signup from "./Pages/Admin/Auth/Sigup/Signup";
 
-import LandingPage from "./Pages/Landing/LandingPage";
-import HomeAdmin from "./Pages/Admin/Home/HomeAdmin";
 
 import Home from "./Pages/Home/Home";
+import LandingPage from "./Pages/Landing/LandingPage";
 
 import Navbar from "./Components/Navbar/NavBar";
 
+//Routes private
 import PrivateRoute from "./Components/TypeRoutes/PrivateRoute";
 import ChartBar from "./Pages/Admin/ChartBar/ChartBar";
 import ChartPie from "./Pages/Admin/ChartPie/ChartPie";
