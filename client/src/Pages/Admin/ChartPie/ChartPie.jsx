@@ -18,7 +18,7 @@ export default function ChartPie() {
     <div className={styles.container}>
       <h1>CHALLENGE</h1>
       <div className={styles.chartpie}>
-        {data.sleep ? <GraphicPie data={data.sleep} /> : "LOADING"}
+        {data.sleep ? <GraphicPie data={data.sleep} /> : <h3>Must load data!</h3>}
       </div>
     </div>
   );

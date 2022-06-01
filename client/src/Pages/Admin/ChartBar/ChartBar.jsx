@@ -20,7 +20,7 @@ export default function ChartBar(){
         <h1>CHALLENGE</h1>
       <div className={styles.chartbar}>
      {data.mood?
-        <GraphicBar data={data.mood}/>:"LOADING"}
+        <GraphicBar data={data.mood}/>:<h3>Must load data!</h3>}
       </div>
       </div>
     )
